@@ -1,24 +1,36 @@
-### Odometry
+### Part 1  点云预处理
 
-SA-LOAM + semantic filter
+1. 语义分割方法：RangeNet++（$64 \times 1024 ~ \mathrm{px}$ 版本）（可以适当减少语义标签的类别数量*）
 
-### Place Recognition
+2. 语义分割后处理
+   - 消除错误标签：参考 SuMa++ 的精细化方法
+   - 降采样：体素下采样（*根据先验知识确定每个语义标签的下采样率）
+   - 实例分割：CVC聚类
 
-1. RangeNet++: semantic segmentation of point cloud
-2. **Erosion & KNN
-3. k-means cluster/ CVC cluster: make out all the Instances
-4. SSFM(Sparse Semantic Feature Map)
-5. DGCNN
+### Part 2  里程计
 
-### Loop Closure Constraints
+1. 最小化特征点到边或平面的距离，并引入语义标签的限制：（参考SA-LOAM）
+   - 只计算具有相同语义标签的点-线或点-平面距离
+   - 约定地平面法向量向上，建筑物平面法向量水平
+2. 生成位姿图
 
-1. RANSAC
-2. Semantic-ICP
+### Part 3  闭环检测
 
-### Map Construction
+1. 候选帧生成
+   - 连续定位：Scan Context 粗匹配结合位置变化生成候选
+   - *重定位：通过局部和全局的SSFM进行粗匹配获取最近的关键帧作为候选
+2. 稀疏语义特征图SSFM的构建：
+   - 计算实例重心坐标，生成语义地图
+   - 节点嵌入，生成每个节点的特征向量（参考SG_PR）
+   - 构造稀疏语义特征图
+3. 点云相似度度量（参考SG_PR）
+   - 图嵌入：汇聚当前帧和候选帧点云的全局特征
+   - 图交互+全连接层：生成点云相似度度量值
+4. 位姿约束
+   - RANSAC 粗匹配 + ICP 精匹配
 
-Point cloud Map + SSFM
+### Part 4  后端优化
 
-### Back-end Optimization
+使用 g2o库进行位姿图优化
 
-g2o
+**SG_PR*: Semantic Graph Based Place Recognition for 3D Point Clouds
