@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O2 -g -DNDEBUG -shared -Wl,-soname,libgtest_main.so -o ../lib/libgtest_main.so CMakeFiles/gtest_main.dir/src/gtest_main.cc.o  -Wl,-rpath,/media/fast-cern/EF63BEBDBD3FDB9A/SS_LOAM/ros_ws/build/gtest/lib ../lib/libgtest.so -lpthread 
