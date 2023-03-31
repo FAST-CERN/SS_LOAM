@@ -1,2 +1,2 @@
-
--DCMAKE_BUILD_TYPE=RelWithDebInfo -DCATKIN_DEVEL_PREFIX=/media/fast-cern/EF63BEBDBD3FDB9A/SS_LOAM/ros_ws/devel -DCMAKE_INSTALL_PREFIX=/media/fast-cern/EF63BEBDBD3FDB9A/SS_LOAM/ros_ws/install -G Unix Makefiles
+pcl_filter
+-DCATKIN_DEVEL_PREFIX=/media/fast-cern/EF63BEBDBD3FDB9A/SS_LOAM/ros_ws/devel -DCMAKE_INSTALL_PREFIX=/media/fast-cern/EF63BEBDBD3FDB9A/SS_LOAM/ros_ws/install -G Unix Makefiles

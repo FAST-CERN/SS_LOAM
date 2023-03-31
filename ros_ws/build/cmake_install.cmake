@@ -136,6 +136,7 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/media/fast-cern/EF63BEBDBD3FDB9A/SS_LOAM/ros_ws/build/gtest/cmake_install.cmake")
+  include("/media/fast-cern/EF63BEBDBD3FDB9A/SS_LOAM/ros_ws/build/pcl_filter/cmake_install.cmake")
 
 endif()
 

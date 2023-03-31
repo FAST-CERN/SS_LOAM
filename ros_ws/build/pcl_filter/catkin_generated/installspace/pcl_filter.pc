@@ -1,0 +1,8 @@
+prefix=/media/fast-cern/EF63BEBDBD3FDB9A/SS_LOAM/ros_ws/install
+
+Name: pcl_filter
+Description: Description of pcl_filter
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
