@@ -2,7 +2,7 @@
 #include <pcl/io/pcd_io.h>
 #include <pcl/filters/voxel_grid.h>
 #include <pcl/point_types.h>
-#include <pcl/visualization/pcl_visualizer.h>
+#include <pcl/visualization/cloud_viewer.h>
 
 std::string data_root = "/media/fast-cern/EF63BEBDBD3FDB9A/Dataset/Voxel Grid Tutorial";
 std::string file_name = "table_scene_lms400.pcd";
@@ -36,9 +36,20 @@ int main(int argc, char** argv){
     pcl::PCDWriter writer;
     writer.write(data_root+"/vox_filter.pcd",*cloud_filter);
     
-    //Visualization
-    // pcl::
+    //PointCloud type trans
+    pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_vis(new pcl::PointCloud<pcl::PointXYZ>());
+    pcl::fromPCLPointCloud2(*cloud_filter,*cloud_vis);
 
+    //Visualization
+    pcl::visualization::CloudViewer viewer("PointCloud Viewer");
+    // visualizer->setBackgroundColor(0,0,0);
+    // visualizer->addPointCloud<pcl::PointXYZ>(cloud_vis,"Filtered PointCloud");
+    // visualizer->setPointCloudRenderingProperties(pcl::visualization::PCL_VISUALIZER_POINT_SIZE, 3, "Filtered PointCloud");
+    // visualizer->addCoordinateSystem(5.0);
+
+    viewer.showCloud(cloud_vis);
+    while(!viewer.wasStopped()){
+    }
 
     return 0;
 }
