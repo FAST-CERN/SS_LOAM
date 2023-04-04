@@ -67,14 +67,14 @@ set(pcl_filter_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(pcl_filter_SOURCE_PREFIX /media/fast-cern/EF63BEBDBD3FDB9A/SS_LOAM/ros_ws/src/pcl_filter)
-  set(pcl_filter_DEVEL_PREFIX /media/fast-cern/EF63BEBDBD3FDB9A/SS_LOAM/ros_ws/devel)
+  set(pcl_filter_SOURCE_PREFIX /home/fast-cern/code/SS_LOAM/ros_ws/src/pcl_filter)
+  set(pcl_filter_DEVEL_PREFIX /home/fast-cern/code/SS_LOAM/ros_ws/devel)
   set(pcl_filter_INSTALL_PREFIX "")
   set(pcl_filter_PREFIX ${pcl_filter_DEVEL_PREFIX})
 else()
   set(pcl_filter_SOURCE_PREFIX "")
   set(pcl_filter_DEVEL_PREFIX "")
-  set(pcl_filter_INSTALL_PREFIX /media/fast-cern/EF63BEBDBD3FDB9A/SS_LOAM/ros_ws/install)
+  set(pcl_filter_INSTALL_PREFIX /home/fast-cern/code/SS_LOAM/ros_ws/install)
   set(pcl_filter_PREFIX ${pcl_filter_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /media/fast-cern/EF63BEBDBD3FDB9A/SS_LOAM/ros_ws/install/lib;/opt/ros/noetic/lib)
+    foreach(path /home/fast-cern/code/SS_LOAM/ros_ws/install/lib;/home/fast-cern/code/SS_LOAM/ros_ws/devel/lib;/opt/ros/noetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

@@ -1,8 +1,8 @@
-# Install script for directory: /media/fast-cern/EF63BEBDBD3FDB9A/SS_LOAM/ros_ws/src/pcl_filter
+# Install script for directory: /home/fast-cern/code/SS_LOAM/ros_ws/src/pcl_filter
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/media/fast-cern/EF63BEBDBD3FDB9A/SS_LOAM/ros_ws/install")
+  set(CMAKE_INSTALL_PREFIX "/home/fast-cern/code/SS_LOAM/ros_ws/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -12,7 +12,7 @@ if(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     string(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   else()
-    set(CMAKE_INSTALL_CONFIG_NAME "RelWithDebInfo")
+    set(CMAKE_INSTALL_CONFIG_NAME "")
   endif()
   message(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 endif()
@@ -37,23 +37,18 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-# Set default install directory permissions.
-if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/usr/bin/objdump")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/fast-cern/code/SS_LOAM/ros_ws/build/pcl_filter/catkin_generated/installspace/pcl_filter.pc")
 endif()
 
-if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/media/fast-cern/EF63BEBDBD3FDB9A/SS_LOAM/ros_ws/build/pcl_filter/catkin_generated/installspace/pcl_filter.pc")
-endif()
-
-if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/pcl_filter/cmake" TYPE FILE FILES
-    "/media/fast-cern/EF63BEBDBD3FDB9A/SS_LOAM/ros_ws/build/pcl_filter/catkin_generated/installspace/pcl_filterConfig.cmake"
-    "/media/fast-cern/EF63BEBDBD3FDB9A/SS_LOAM/ros_ws/build/pcl_filter/catkin_generated/installspace/pcl_filterConfig-version.cmake"
+    "/home/fast-cern/code/SS_LOAM/ros_ws/build/pcl_filter/catkin_generated/installspace/pcl_filterConfig.cmake"
+    "/home/fast-cern/code/SS_LOAM/ros_ws/build/pcl_filter/catkin_generated/installspace/pcl_filterConfig-version.cmake"
     )
 endif()
 
-if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/pcl_filter" TYPE FILE FILES "/media/fast-cern/EF63BEBDBD3FDB9A/SS_LOAM/ros_ws/src/pcl_filter/package.xml")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/pcl_filter" TYPE FILE FILES "/home/fast-cern/code/SS_LOAM/ros_ws/src/pcl_filter/package.xml")
 endif()
 
